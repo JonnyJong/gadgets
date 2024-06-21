@@ -42,7 +42,18 @@ async function main() {
   let dirents = await readdir('./src', { withFileTypes: true });
   dirents = dirents
     .filter((dirent) => !dirent.name.startsWith('_'))
-    .filter((dirent) => dirent.isDirectory());
+    .filter((dirent) => {
+      if (dirent.isFile()) {
+        if (
+          ['index.pug', 'style.styl'].includes(dirent.name) ||
+          dirent.name.endsWith('.ts')
+        )
+          return false;
+        copy(path.join('./src', dirent.name), path.join('./dist', dirent.name));
+        return false;
+      }
+      return dirent.isDirectory();
+    });
   let items = [];
   for (const dirent of dirents) {
     let title = await compile(dirent.name);
