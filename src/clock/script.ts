@@ -129,7 +129,6 @@ document.querySelector('#action-settings')?.addEventListener('click', () => {
 });
 size.addEventListener('input', () => {
   document.body.style.setProperty('--time-size', `${size.value}px`);
-  console.log(size.value);
 });
 theme.addEventListener('click', () => {
   document.documentElement.classList.toggle('invert');
@@ -151,6 +150,16 @@ function setDefaultSize() {
   size.dispatchEvent(new Event('input'));
 }
 window.addEventListener('resize', setSizeRange);
+
+//#region Full Screen
+document.querySelector('#action-full')?.addEventListener('click', () => {
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+  } else {
+    document.documentElement.requestFullscreen();
+  }
+  actions.classList.remove('actions-show');
+});
 
 requestAnimationFrame(clock);
 setSizeRange();
