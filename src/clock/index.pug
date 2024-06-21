@@ -1,0 +1,57 @@
+link(rel="stylesheet", href="/clock/icon.css")
+
+.clock
+  .time
+    .time-digit#time-hour-a(num="0")
+      .time-num 0
+      .time-num 1
+      .time-num 2
+    .time-digit#time-hour-b(num="0")
+      - var n = 0
+      while n < 10
+        .time-num= n++
+    .time-colon(style="animation-delay: .2s;")=':'
+    .time-digit#time-min-a(num="0")
+      - n = 0
+      while n < 6
+        .time-num= n++
+    .time-digit#time-min-b(num="0")
+      - n = 0
+      while n < 10
+        .time-num= n++
+    .time-colon=':'
+    .time-digit#time-sec-a(num="0")
+      - n = 0
+      while n < 6
+        .time-num= n++
+    .time-digit#time-sec-b(num="0")
+      - n = 0
+      while n < 10
+        .time-num= n++
+  .line
+  .timer-target
+  .timer-duration
+
+.action-toggle
+
+.actions
+  .action#action-timer
+    .icon.icon-timer
+  .action#action-settings
+    .icon.icon-settings
+
+.panel.panel-timer
+  label(for="timer-target") 目标时间
+  input#timer-target(type="time")
+  label(for="timer-duration") 时长
+  input#timer-duration(type="time")
+  .panel-ops
+    button#timer-cancel 取消
+    button#timer-clear 清除计数器
+    button#timer-set 定时
+.panel.panel-settings
+  label 尺寸
+  input#size(type="range" min="32" value="64")
+  button#theme 反转颜色
+  .panel-ops
+    button#settings-close 关闭
