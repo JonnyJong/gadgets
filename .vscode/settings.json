@@ -1,0 +1,11 @@
+{
+  "liveServer.settings.root": "/dist",
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": ".*",
+        "cmd": "npm run compile"
+      }
+    ]
+  }
+}

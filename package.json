@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "compile": "tsc && node scripts/compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.7",
+    "pug": "^3.0.3",
+    "stylus": "^0.63.0",
+    "typescript": "^5.5.2"
+  }
+}
