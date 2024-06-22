@@ -1,0 +1,110 @@
+link(rel="stylesheet", href="/sudoku/icon.css")
+link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu+Mono&display=swap")
+
+.color-filter
+.dark-filter
+.nav
+  .timer
+    .icon.icon-timer
+    .time 0
+  .flex
+  .edit.btn(onclick="editGame()")
+    .icon.icon-edit
+  .random.btn
+    .icon.icon-random
+  .auto-clear.btn
+    .icon.icon-auto-clear
+  .tip.btn(onclick="showError()")
+    .icon.icon-tip
+  .darkmode.btn(onclick="darkmode()")
+    .icon.icon-darkmode
+    .dark-filter-animation
+  .full-screen.btn(onclick="switchFullScreen()")
+    .icon.icon-full
+.center
+  .table
+    - var line = 0
+    while line < 9
+      .line
+        - var row = 0
+        while row < 9
+          .block(onclick="setEle(" + line + "," + row + ")" data-y=line data-x=row)
+            .cur-num
+            .mark-num
+              .a 1
+              .b 2
+              .c 3
+              .d 4
+              .e 5
+              .f 6
+              .g 7
+              .h 8
+              .i 9
+          - row++
+      - line++
+.do
+  div
+    - var num = 1
+    while num < 6
+      .num.btn(onpointerdown="setNum(" + num + ",this)")
+        .label=num
+        .less 9
+      - num++
+  div
+    - var num = 6
+    while num < 10
+      .num.btn(onpointerdown="setNum(" + num + ",this)")
+        .label=num
+        .less 9
+      - num++
+    .clean.btn(onpointerdown="setNum(0,this)")
+      .icon.icon-dismiss.label
+.tool
+  .reset.btn(onclick="reset()")
+    .icon.icon-refresh
+  .undo.btn(onclick="recorder('undo')")
+    .icon.icon-undo
+  .mark.btn(onclick="markmode()")
+    .icon.icon-mark
+  .save.btn(onclick="panel('save')")
+    .icon.icon-save
+  .load.btn(onclick="panel('load')")
+    .icon.icon-open
+.dialog
+  .dialog-reset
+    .title 提示
+    .content
+      ='按下“清空”以清空整个面板'
+      br
+      ='按下“归零”以重置计时器'
+      br
+      ='按下“重玩”以重新开始'
+    .btns
+      .main-btn(onclick="reset()") 取消
+      div(onclick="reset('clear')") 清空
+      div(onclick="reset('timer')") 归零
+      div(onclick="reset('replay')") 重玩
+.panel
+  .close-panel(onclick="panel('close')")
+  .save-load
+    .title
+      .save-title
+        ='保存 ('
+        span 0
+        ='/20)'
+      .load-title 加载
+    .content
+      .save-new(onclick="saveLoad()")
+        .icon.icon-add
+      .save-load-outside(onclick="saveLoadOutside()")
+        .save-label
+          .icon.icon-copy
+          div 导出数据
+        .load-label
+          .icon.icon-paste
+          div 导入数据
+.win(onclick="this.classList.remove('open')")
+  .icon.icon-win
+.input(style="display:none;")
+  div(onclick="document.querySelector('.input').style.display='none'")
+  input
