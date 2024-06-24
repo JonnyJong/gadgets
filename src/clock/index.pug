@@ -1,4 +1,5 @@
 link(rel="stylesheet", href="/clock/icon.css")
+script(src="/clock/NoSleep.min.js")
 
 .clock
   .time
@@ -55,5 +56,8 @@ link(rel="stylesheet", href="/clock/icon.css")
   label 尺寸
   input#size(type="range" min="32" value="64")
   button#theme 反转颜色
+  div
+    input#screen-always-on(type="checkbox")
+    label(for="screen-always-on") 屏幕常亮
   .panel-ops
     button#settings-close 关闭

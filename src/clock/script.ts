@@ -1,3 +1,8 @@
+declare class NoSleep {
+  enable(): void;
+  disable(): void;
+}
+
 function formatTime(time: number) {
   time /= 1000;
   let h = Math.floor(time / 3600);
@@ -150,6 +155,14 @@ function setDefaultSize() {
   size.dispatchEvent(new Event('input'));
 }
 window.addEventListener('resize', setSizeRange);
+let noSleep = new NoSleep();
+let noSleepBtn = document.querySelector<HTMLInputElement>('#screen-always-on')!;
+noSleepBtn.addEventListener('change', () => {
+  if (noSleepBtn.checked) {
+    return noSleep.enable();
+  }
+  noSleep.disable();
+});
 
 //#region Full Screen
 document.querySelector('#action-full')?.addEventListener('click', () => {
