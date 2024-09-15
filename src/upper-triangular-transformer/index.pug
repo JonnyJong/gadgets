@@ -1,0 +1,26 @@
+link(rel="stylesheet", href="/upper-triangular-transformer/icon.css")
+
+.control
+  button#clear
+    .icon.icon-dismiss
+  .flex
+  button.size-btn#size-reduce(disabled)
+    .icon.icon-subtract
+  .size-input-box
+    //- .size-effect.size-add
+    input.size-input(type="number" min="2" step="1" value="2")
+  button.size-btn#size-add
+    .icon.icon-add
+  .flex
+  button#solve
+    .icon.icon-play
+
+.factor
+.matrix
+  .line(style="--i:0")
+    input.cell(type="number" placeholder="0" style="--i:0")
+    input.cell(type="number" placeholder="0" style="--i:1")
+  .line(style="--i:1")
+    input.cell(type="number" placeholder="0" style="--i:0")
+    input.cell(type="number" placeholder="0" style="--i:1")
+.matrix-effect
