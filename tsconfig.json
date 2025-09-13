@@ -1,38 +1,32 @@
 {
-  "compilerOptions": {
-    // Basic Options
-    "target": "ES2020",
-    "module": "ES2020",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "moduleResolution": "Classic",
-    // Type Checking Options
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    // "noUnusedLocals": false,     // 需要通过 ESLint 规则检查
-    // "noUnusedParameters": false,
-    "noImplicitReturns": false,
-    "noFallthroughCasesInSwitch": true,
-    "allowJs": false,
-    "allowSyntheticDefaultImports": true,
-    // Module Resolution Options
-    "baseUrl": ".",
-    // Language Features Options
-    "esModuleInterop": true,
-    // Other Options
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
-    "incremental": true,
-    "sourceMap": true,
-    "outDir": "dist",
-    "rootDir": "src",
-    "removeComments": true,
-    "newLine": "lf"
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "scripts", "./config.js"]
+	"compilerOptions": {
+		// Basic
+		"target": "ES2024",
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		// Checking
+		"strict": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"strictPropertyInitialization": true,
+		"noImplicitThis": true,
+		"alwaysStrict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"allowJs": false,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
+		// Features
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"experimentalDecorators": true,
+		// Output
+		"sourceMap": false,
+		"removeComments": false,
+		"newLine": "lf",
+		"declaration": false,
+	}
 }

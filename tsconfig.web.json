@@ -1,0 +1,10 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"lib": ["ES2024", "DOM", "DOM.Iterable", "DOM.AsyncIterable"],
+		"types": [],
+		"sourceRoot": "src",
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["node_modules"],
+}

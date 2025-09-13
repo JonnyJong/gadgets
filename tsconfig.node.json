@@ -1,0 +1,13 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"lib": ["ES2024"],
+		"sourceRoot": "scripts",
+		"declaration": false,
+		"removeComments": true,
+	},
+	"include": ["scripts/**/*.ts"],
+	"exclude": ["node_modules"],
+}

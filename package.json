@@ -1,11 +1,25 @@
 {
-  "scripts": {
-    "compile": "tsc && node scripts/compile"
-  },
-  "devDependencies": {
-    "@types/node": "^20.14.7",
-    "pug": "^3.0.3",
-    "stylus": "^0.63.0",
-    "typescript": "^5.5.2"
-  }
+	"name": "gadgets",
+	"version": "1.0.0",
+	"description": "Some possibly useful and useless little gadgets",
+	"private": true,
+	"author": "jonnyjonny",
+	"license": "MIT",
+	"scripts": {
+		"preinstall": "npx -y only-allow pnpm",
+		"prepare": "rolldown -c scripts/rolldown.config.ts",
+		"build": "rolldown -c && node ./scripts/index.js",
+		"serve": "concurrently \"rolldown -w -c\" \"node ./scripts/index.js -w\" \"live-server --port=10150 dist\""
+	},
+	"packageManager": "pnpm@10.16.0",
+	"devDependencies": {
+		"@types/node": "24.3.3",
+		"@types/pug": "2.0.10",
+		"@types/stylus": "0.48.43",
+		"concurrently": "^9.2.1",
+		"live-server": "1.2.2",
+		"pug": "3.0.3",
+		"rolldown": "1.0.0-beta.37",
+		"stylus": "0.64.0"
+	}
 }
